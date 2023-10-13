@@ -1,7 +1,13 @@
-#define MAX_TOK_LENGTH 1024
+typedef struct {
+	char *value;
+} token;
 
-char **lex(char *string) {
-	char **tokens;
-	
-	return tokens;
-}
+typedef struct {
+	char *input;
+	int position;
+} lexer;
+
+lexer *lexer_create(const char *input);
+void lexer_destroy(lexer *lexer);
+token lexer_next_token(lexer *tlexer);
+
